@@ -1,45 +1,73 @@
 import React from 'react';
-import { getCompetitions } from './service/service';
 import { Switch, Route } from 'react-router-dom';
+
 import CompetitionsContainer from './components/CompetitionsContainer/index.js';
+import TeamsContainer from './components/TeamsContainer/index.js';
+import StandingsContainer from './components/StandingsContainer/index.js';
+import { getCompetitions } from './service/service';
+import {
+  ROUTER_PATH, 
+  ROUTER_STANDINGS, 
+  ROUTER_TEAM
+} from './constants/router/constantsRoutes';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      competitions: {}
+      competitions: [],
+      count: 0
     }
   }
 
   componentDidMount = async() => {
-    const competitions = await getCompetitions();
-    this.setState({
-      competitions
-    });
+    this.getCompetitionsFetch();
   }
 
   getCompetitionsFetch() {
     getCompetitions()
     .then(data => {
       this.setState({
-        competitions: data
+        competitions: data.competitions,
+        count: data.count
       })
     })
   }
 
   render() {
-    console.log('COMPETITIONS', this.state.competitions);
+    const { competitions } = this.state;
+    console.log('COMPETITIONS', competitions);
     return(
       <Switch>
 
         <Route 
-          exact path = "/"
-          render={() => (
-            <CompetitionsContainer
+          exact 
+          path = {ROUTER_PATH}
+          render = {() => (
+            <CompetitionsContainer 
+              competitions={competitions}
             />
           )}
         />
-    </Switch>
+        <Route
+          exact
+          path = {ROUTER_STANDINGS}
+          render = { (routerProps) => ( 
+            <StandingsContainer 
+              match = {routerProps.match} 
+            /> 
+          )}
+        />
+        <Route
+          exact
+          path = {ROUTER_TEAM}
+          render = { (routerProps) => ( 
+            <TeamsContainer 
+              match = {routerProps.match} 
+            /> 
+          )}
+        />
+      </Switch>
     );
   }
 }
