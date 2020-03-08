@@ -1,3 +1,84 @@
-h1 {
-  color: red;
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #787878;
+}
+.competitions {
+  &-container {
+    display: flex;
+    justify-content: ceter;
+    flex-direction: column;
+  }
+  &-title {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 16px;
+    font-weight: bold;
+    color: grey;
+  }
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    max-width: 300px;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media all and (min-width: 768px) {
+      max-width: 600px;
+    }
+    @media all and (min-width: 1020px) {
+      max-width: 900px;
+    }
+  }
+  &-item {
+    border: solid rgb(61, 163, 231) 1px;
+    border-radius: 3px;
+    width: 250px;
+    margin: 3px 10px;
+    height: 40px;
+    background-color: lightgrey;
+    
+    &:hover {
+      box-shadow: (-2px 3px 10px 0 rgba(0, 0, 0, 0.1));
+      transition: 0.5s;
+    }
+    &-container {
+      height: 100%;;
+    }
+  }
+  &-link {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+    align-items: center;
+      &-block {
+        display: flex;
+        flex-direction: column;
+        &-name {
+          align-items: flex-start;
+        }
+        &-country {
+          align-items: flex-end;
+        }
+        &-name,
+        &-country {
+          font-family: 'Roboto', sans-serif; 
+          font-size: 12px;
+          font-weight: bold;
+          color: rgb(61, 163, 231);
+          margin: 0 0 4px 0;
+        }
+        &-title {
+          margin: 0;
+          font-family: 'Roboto', sans-serif; 
+          font-size: 9px;
+          font-weight: bold;
+          color: #7d7f7d;
+        }
+      }
+  }
 }

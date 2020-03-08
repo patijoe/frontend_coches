@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import CompetitionsContainer from './components/CompetitionsContainer/index.js';
 import TeamsContainer from './components/TeamsContainer/index.js';
 import StandingsContainer from './components/StandingsContainer/index.js';
-import { getCompetitions } from './service/service';
+import { getCompetitions, getTeams } from './services/request';
 import {
   ROUTER_PATH, 
   ROUTER_STANDINGS, 
@@ -16,15 +16,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       competitions: [],
-      count: 0
+      count: 0,
+      teams: []
     }
   }
 
   componentDidMount = async() => {
     this.getCompetitionsFetch();
+    this.getTeamsFetch();
   }
 
-  getCompetitionsFetch() {
+  getCompetitionsFetch(event) {
     getCompetitions()
     .then(data => {
       this.setState({
@@ -34,9 +36,17 @@ class App extends React.Component {
     })
   }
 
+  getTeamsFetch() {
+    getTeams(2001)
+    .then(data => {
+      this.setState({
+        teams: data.teams
+      })
+    })
+  }
+
   render() {
-    const { competitions } = this.state;
-    console.log('COMPETITIONS', competitions);
+    const { competitions} = this.state;
     return(
       <Switch>
 
