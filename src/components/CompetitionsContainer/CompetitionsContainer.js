@@ -3,6 +3,20 @@ import { Link } from "react-router-dom";
 
 import { ROUTER_STANDINGS_LINK } from "../../constants/router/constantsRoutes";
 
+const availableCompetitions = [
+  2000,
+  2001,
+  2002,
+  2003,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2021
+]
 class CompetitionsContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +44,9 @@ class CompetitionsContainer extends React.Component {
           <h1 className="competitions-title">Competitions</h1>
           <ul className="competitions-list">
             {competitions &&
-              competitions.map(competition => {
+              competitions
+              .filter(item => availableCompetitions.indexOf(item.id) !== -1  )
+              .map(competition => {
                 return (
                   <li
                     className="competitions-item"
