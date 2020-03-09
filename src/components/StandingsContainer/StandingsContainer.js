@@ -42,7 +42,12 @@ class StandingsContainer extends React.Component {
 						<h2 className="standings-competition-name">{competition && competition.name}</h2>
 					</div>
 					<div className="standings-tables">
-						{standings && this.hasTable(standings[0]) ? standings.filter(item => item.type === 'TOTAL').map(team => <TableContainer team={team} />) : 'ya veremos'}
+						{standings && this.hasTable(standings[0]) ? 
+							standings
+							.filter(item => item.type === 'TOTAL')
+							.map(team => <TableContainer team={team} />) : 
+							'ya veremos'
+						}
 					</div>
 				</div>
 			</div>

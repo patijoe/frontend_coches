@@ -32,6 +32,8 @@ class CompetitionsContainer extends React.Component {
     });
   };
 
+  handleClick = id => () => this.selectCompetition(id);
+
   render() {
     const { competitions } = this.props;
     const { competitionSelected } = this.state;
@@ -51,7 +53,7 @@ class CompetitionsContainer extends React.Component {
                   <li
                     className="competitions-item"
                     key={competition.id}
-                    onClick={() => this.selectCompetition(competition.id)}
+                    onClick={this.handleClick(competition.id)}
                   >
                     <div className="competitions-item-container">
                       <Link
