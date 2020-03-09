@@ -1,7 +1,23 @@
-.standings{
-  &-item {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
+.standings {
+	&-competition-name {
+		font-family: 'Roboto', sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	&-title {
+		font-family: 'Roboto', sans-serif;
+		font-size: 22px;
+		font-weight: bold;
+		color: rgb(204, 208, 211);
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	&-tables {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&-container {
+		height: 1000vh;
+	}
 }
