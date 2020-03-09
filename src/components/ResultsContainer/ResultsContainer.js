@@ -49,11 +49,23 @@ class ResultsContainer extends React.Component {
 		});
 	}
 
+	setCompetitionStages(result) {
+		const competitionStages = result.reduce((acc, item) => {
+			acc[item.stage] = acc [item.stage] || [];
+			acc[item.stage].push(item);
+			return acc;
+		}, {});
+		return competitionStages;
+	}
+
 	render() {
 		const { competition, results, teams } = this.state;
 		console.log('RESULTS', results);
 		console.log('COMPETITIOM', competition);
 		console.log('TEAMS', teams);
+
+		const competitionStages = this.setCompetitionStages(results);
+		console.log('stages', competitionStages);
 
 		return (
 			<div className="results-container">
@@ -61,32 +73,39 @@ class ResultsContainer extends React.Component {
 				
 				<div className="results-match" >
 					<table className="results-table">
-						{results
-						// .some(item => stagesTypes.includes(item.stage))
-						.map(item => {
-							return(
-								<tbody className="results-table-body" key={item.id}>
-									<th className="results-table-body-row">
-										<td className="results-table-body-data">
-											<div className="results-team  results-first-team">
-												<h2 className="results-team-name">{item.homeTeam.name}</h2>
-											</div>
-										</td>
-										<td className="results-table-body-goles">
-											<div className="results-goles">
-												<h2 className="results-team-goles">{item.score.fullTime.homeTeam}</h2>
-												<h2 className="results-team-goles">{item.score.fullTime.awayTeam}</h2>
-											</div>
-										</td>
-										<td className="results-table-body-data">
-											<div className="results-team results-second-team">
-												<h2 className="results-team-name">{item.awayTeam.name}</h2>
-											</div>
-										</td>
-									</th>
-								</tbody>
+					{Object.keys(competitionStages)
+						.map(key => {
+							return (
+								<div>
+									<h2>{key}</h2>
+									{competitionStages[key].map(item => {
+										return (
+											<tbody className="results-table-body" key={item.id}>
+											<th className="results-table-body-row">
+												<td className="results-table-body-data">
+													<div className="results-team  results-first-team">
+														<h2 className="results-team-name">{item.homeTeam.name}</h2>
+													</div>
+												</td>
+												<td className="results-table-body-goles">
+													<div className="results-goles">
+														<h2 className="results-team-goles">{item.score.fullTime.homeTeam}</h2>
+														<h2 className="results-team-goles">{item.score.fullTime.awayTeam}</h2>
+													</div>
+												</td>
+												<td className="results-table-body-data">
+													<div className="results-team results-second-team">
+														<h2 className="results-team-name">{item.awayTeam.name}</h2>
+													</div>
+												</td>
+											</th>
+										</tbody>
+										);	
+									})}
+								</div>
 							);
-						})}
+						})
+					}
 					</table>
 				</div>
 			</div>		
