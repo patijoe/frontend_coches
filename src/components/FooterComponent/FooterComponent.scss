@@ -1,0 +1,18 @@
+.footer {
+  align-items: center;
+  position: absolute;
+  height: 90px;
+
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  bottom: 0;
+  &-title {
+    color: #7d7f7d;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 250px;
+    color: #7d7f7d;
+  }
+}

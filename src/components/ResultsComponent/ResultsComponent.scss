@@ -21,6 +21,7 @@
   &-match {
     display: flex;
     justify-content: center;
+    position: relative;
     @media all and (min-width: 768px) {
       width: 450px;
     }

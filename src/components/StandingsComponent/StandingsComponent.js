@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FooterComponent from '../FooterComponent';
 import StandingsTableComponent from '../StandingsTableComponent';
+
 import { getStandings } from '../../services/request';
 import { ROUTER_PATH } from '../../constants/router/constantsRoutes';
 
@@ -45,6 +47,7 @@ class StandingsComponent extends React.Component {
           </div>
           <div className="standings-tables">{standings && this.hasTable(standings[0]) ? standings.filter(item => item.type === 'TOTAL').map(team => <StandingsTableComponent team={team} />) : ''}</div>
         </div>
+        <FooterComponent />
       </div>
     );
   }

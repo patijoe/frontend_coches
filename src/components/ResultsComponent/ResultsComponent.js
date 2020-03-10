@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import FooterComponent from '../FooterComponent';
 import ResultTableComponent from '../ResultTableComponent';
 
 import { getMatches, getTeams } from '../../services/request';
@@ -66,6 +67,7 @@ class ResultsComponent extends React.Component {
           VOLVER
         </Link>
         <div className="results-match">
+          <FooterComponent />
           <table className="results-table">
             {Object.keys(competitionStages).map(key => {
               return (
