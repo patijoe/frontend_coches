@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TableContainer from '../TableContainer';
 import { getStandings } from '../../services/request';
+import { ROUTER_PATH } from '../../constants/router/constantsRoutes';
 
 class StandingsContainer extends React.Component {
 	constructor(props) {
@@ -37,6 +39,7 @@ class StandingsContainer extends React.Component {
 		return (
 			<div className="app">
 				<div className="standings-container">
+				<Link className="back-button" to={ROUTER_PATH}>VOLVER</Link>
 					<div className="standing-container-header">
 						<h1 className="standings-title">Standings</h1>
 						<h2 className="standings-competition-name">{competition && competition.name}</h2>

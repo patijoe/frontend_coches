@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ROUTER_STANDINGS_LINK } from "../../constants/router/constantsRoutes";
+import { 
+  ROUTER_RESULTS_LINK, 
+  ROUTER_STANDINGS_LINK 
+} from "../../constants/router/constantsRoutes";
 
 const availableCompetitions = [
   2000,
@@ -56,10 +59,8 @@ class CompetitionsContainer extends React.Component {
                     onClick={this.handleClick(competition.id)}
                   >
                     <div className="competitions-item-container">
-                      <Link
-                        className="competitions-link"
-                        to={ROUTER_STANDINGS_LINK(`${competition.id}`)}
-                      >
+                      <div className="competitions-item-info">
+
                         <div className="competitions-link-block competitions-link-block-name">
                           <h2 className="competitions-link-block-title">
                             Name
@@ -76,7 +77,19 @@ class CompetitionsContainer extends React.Component {
                             {competition.area.name}
                           </h2>
                         </div>
-                      </Link>
+                      </div>
+                      <div className="competitions-link-container">
+                        <Link
+                        className="competitions-link"
+                        to={ROUTER_STANDINGS_LINK(`${competition.id}`)}
+                        >Standings
+                        </Link>
+                        <Link
+                          className="competitions-link"
+                          to={ROUTER_RESULTS_LINK(`${competition.id}`)}
+                          >Results
+                        </Link>
+                      </div>
                     </div>
                   </li>
                 );

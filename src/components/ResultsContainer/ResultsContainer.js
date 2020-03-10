@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { getMatches, getTeams } from '../../services/request';
+import { ROUTER_PATH } from '../../constants/router/constantsRoutes';
 
 const stagesTypes = [
 	"1ST_QUALIFYING_ROUND",
@@ -60,28 +62,24 @@ class ResultsContainer extends React.Component {
 
 	render() {
 		const { competition, results, teams } = this.state;
-		console.log('RESULTS', results);
-		console.log('COMPETITIOM', competition);
-		console.log('TEAMS', teams);
 
 		const competitionStages = this.setCompetitionStages(results);
-		console.log('stages', competitionStages);
 
 		return (
 			<div className="results-container">
 				<h1 className="results-title">Results</h1>
-				
+				<Link className="back-button" to={ROUTER_PATH}>VOLVER</Link>
 				<div className="results-match" >
 					<table className="results-table">
 					{Object.keys(competitionStages)
 						.map(key => {
 							return (
-								<div>
+								<div key={key}>
 									<h2>{key}</h2>
 									{competitionStages[key].map(item => {
 										return (
 											<tbody className="results-table-body" key={item.id}>
-											<th className="results-table-body-row">
+											<tr className="results-table-body-row">
 												<td className="results-table-body-data">
 													<div className="results-team  results-first-team">
 														<h2 className="results-team-name">{item.homeTeam.name}</h2>
@@ -98,7 +96,7 @@ class ResultsContainer extends React.Component {
 														<h2 className="results-team-name">{item.awayTeam.name}</h2>
 													</div>
 												</td>
-											</th>
+											</tr>
 										</tbody>
 										);	
 									})}
