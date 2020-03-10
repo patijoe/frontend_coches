@@ -13,7 +13,6 @@ class CompetitionsComponent extends React.Component {
   }
 
   selectCompetition = id => {
-    console.log('PACO', id);
     this.setState({
       competitionSelected: id
     });
@@ -23,9 +22,6 @@ class CompetitionsComponent extends React.Component {
 
   render() {
     const { competitions } = this.props;
-    const { competitionSelected } = this.state;
-    console.log('selecCOMP', competitionSelected);
-    console.log('COMP', competitions);
 
     return (
       <div className="app">

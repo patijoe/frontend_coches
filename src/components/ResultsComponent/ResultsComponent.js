@@ -61,26 +61,22 @@ class ResultsComponent extends React.Component {
 
     return (
       <div className="results-container">
-        <h1 className="results-title">Results</h1>
+        <h1 className="results-title">{`Results ${competition.name}`}</h1>
         <Link className="back-button" to={ROUTER_PATH}>
           VOLVER
         </Link>
         <div className="results-match">
           <table className="results-table">
             {Object.keys(competitionStages).map(key => {
-              console.log('COMP', competitionStages[key]);
               return (
-                <div key={key}>
+                <div className="results-stage" key={key}>
                   <h2>{key === 'GROUP_STAGE' ? 'GROUP STAGE' : ''}</h2>
                   {Object.keys(groupResults(key)).map(item => {
-                    console.log('[ITEM]', groupResults(key)[item]);
-                    console.log('ITEM]', item);
                     return (
-                      <div key={item}>
+                      <div className="results-group" key={item}>
                         <h2>{item}</h2>
                         {groupResults(key)[item].map(item => {
-                          console.log('tabla', item);
-                          return <ResultTableComponent item={item} />;
+                          return <ResultTableComponent item={item} key={key.id} teams={teams} />;
                         })}
                       </div>
                     );

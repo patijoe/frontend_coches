@@ -1,25 +1,46 @@
 .results {
   &-table {
     margin-bottom: 100px;
-    &-first-team {
-      justify-content: flex-start;
+    &-body {
+      border: solid #7d7f7d 1px;
+      border-radius: 3px;
+      background-color: rgb(204, 208, 211);
+      margin: 0 20px;
+      padding: 20px;
+    }
+    &-data {
+      width: 150px;
     }
     &-goles {
-      display: flex;
+      width: 15px;
     }
-    &-second-team {
-      justify-content: flex-end;
-    }
-    &-table-body {
-      &-row {
-        width: 300px;
-        @media all and (min-width: 768px) {
-          width: 460px;
-        }
+  }
+  &-stage,
+  &-group {
+    color: #7d7f7d;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: start;
+  }
+  &-team {
+    display: flex;
+    &-name,
+    &-goles {
+      color: #7d7f7d;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      @media all and (min-width: 768px) {
+        font-size: 20px;
       }
-      &-data {
-        width: 40%;
-      }
     }
+  }
+  &-goles {
+    display: flex;
+  }
+  &-second-team {
+    justify-content: flex-end;
   }
 }

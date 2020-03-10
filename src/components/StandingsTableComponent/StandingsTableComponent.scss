@@ -1,5 +1,5 @@
 .standings-table {
-  border: solid rgb(61, 163, 231) 1px;
+  border: solid #7d7f7d 1px;
   border-radius: 3px;
   background-color: rgb(204, 208, 211);
   margin: 0 20px;
@@ -21,15 +21,6 @@
     flex-direction: column;
     @media all and (min-width: 768px) {
       margin: 10px 30px;
-    }
-  }
-  &-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    color: aliceblue;
-    @media all and (min-width: 768px) {
-      font-size: 20px;
     }
   }
   &-head-row {
