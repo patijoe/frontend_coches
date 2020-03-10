@@ -9,11 +9,11 @@
   }
   &-title {
     font-family: 'Roboto', sans-serif;
-		font-size: 22px;
-		font-weight: bold;
-		color: rgb(204, 208, 211);
-		text-transform: uppercase;
-		margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(204, 208, 211);
+    text-transform: uppercase;
+    margin-bottom: 20px;
   }
   &-match {
     display: flex;
@@ -34,9 +34,9 @@
       font-size: 12px;
       font-weight: bold;
       color: #ccd0d3;
-        @media all and (min-width: 768px) {
-          font-size: 20px;
-        }
+      @media all and (min-width: 768px) {
+        font-size: 20px;
+      }
     }
     &-goles {
       color: #ccd0d3;
@@ -45,38 +45,15 @@
       font-weight: bold;
       text-align: center;
       width: 30px;
-        @media all and (min-width: 768px) {
-          font-size: 20px;
-        }
-    }
-  }
-  &-table {
-    margin-bottom: 100px;
-  }
-  &-first-team {
-    justify-content: flex-start;
-  }
-  &-goles {
-    display: flex;
-  }
-  &-second-team {
-    justify-content: flex-end
-  }
-  &-table-body{
-    &-row {
-      width: 300px;
       @media all and (min-width: 768px) {
-        width: 460px;
+        font-size: 20px;
       }
     }
-    &-data {
-    width: 40%;
   }
-}
 }
 .back-button {
   align-items: center;
-  background-color:rgb(61, 163, 231);
+  background-color: rgb(61, 163, 231);
   border-radius: 3px;
   color: #ccd0d3;
   display: flex;
