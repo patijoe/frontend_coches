@@ -12,12 +12,13 @@ separately. Here are the main application folders:
 
 - [node_modules/](./node_modules): Project dependencies and development tools. 
 - [public](./public):
+    - [favicon.ico]
+    - [index.html]: This is the HTML file
 - [src](./src): The main `frontend-hub` application code.
   - [components](./src/components)
   - [constants](./src/constants): Constants use thought the application.
   - [service](./src/service): Utilities to call REST API's and manage the results. 
   - [styles](./src/styles): Assets of the application (fonts, images, CSS styles).
-  - [index.js](./index.js): This is the HTML file
   - [serviceWorker.js](./serviceWorker.js): background worker that acts as a programmable proxy, allowing us to control what happens on a request-by-request basis.
 - [.gitignore](./.gitignore): List of files and directories which should not be part of the
   repository.
