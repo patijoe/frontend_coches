@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import FooterComponent from '../FooterComponent';
 import ResultTableComponent from '../ResultTableComponent';
 
-import { getMatches, getTeams } from '../../services/request';
+import { getMatches } from '../../services/request';
 import { ROUTER_PATH } from '../../constants/router/constantsRoutes';
 
 class ResultsComponent extends React.Component {
@@ -12,15 +12,13 @@ class ResultsComponent extends React.Component {
     super(props);
     this.state = {
       competition: {},
-      results: [],
-      teams: []
+      results: []
     };
   }
 
   componentDidMount = async () => {
     const { match: { params: { id } } } = this.props;
     this.getMatchesFetch(id);
-    this.getTeamsFetch(id);
   };
 
   getMatchesFetch(id) {
@@ -28,14 +26,6 @@ class ResultsComponent extends React.Component {
       this.setState({
         results: data.matches,
         competition: data.competition
-      });
-    });
-  }
-
-  getTeamsFetch(id) {
-    getTeams(id).then(data => {
-      this.setState({
-        teams: data.teams
       });
     });
   }
@@ -50,7 +40,8 @@ class ResultsComponent extends React.Component {
   }
 
   render() {
-    const { competition, results, teams } = this.state;
+    const { competition, results } = this.state;
+    console.log('RESULTS', results);
 
     const competitionStages = this.setCompetitionStages(results);
     const groupResults = key =>
@@ -78,7 +69,7 @@ class ResultsComponent extends React.Component {
                         <div className="results-group" key={item}>
                           <h2 className="results-group-name">{item}</h2>
                           {groupResults(key)[item].map(item => {
-                            return <ResultTableComponent item={item} key={key.id} teams={teams} />;
+                            return <ResultTableComponent item={item} key={key.id} />;
                           })}
                         </div>
                       );

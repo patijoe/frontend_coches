@@ -2,7 +2,8 @@ import React from 'react';
 
 class ResultTableComponent extends React.Component {
   render() {
-    const { item } = this.props;
+    const { item} = this.props;
+    console.log('ITEM', item);
     return (
       <tbody className="results-table-body" key={item.id}>
         <tr className="results-table-body-row">
@@ -12,6 +13,9 @@ class ResultTableComponent extends React.Component {
             </div>
           </td>
           <td className="results-table-body-goles">
+            <h2 className={item.status === "FINISHED" ?"results-table-body-goles-status-finish" : "results-table-body-goles-status-pending"}>
+            {item.status}
+            </h2>
             <div className="results-goles">
               <h2 className="results-team-goles">{item.score.fullTime.homeTeam}</h2>
               <h2 className="results-team-goles">{item.score.fullTime.awayTeam}</h2>

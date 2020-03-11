@@ -10,6 +10,35 @@
       &-row {
         border-top: 1px solid rgb(189, 190, 194);
       }
+      &-goles {
+        align-items: center;
+        display:flex;
+        flex-direction: column;
+        &-status {
+          &-finish {
+            color: green;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: capitalize;
+            @media all and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+          &-pending {
+            color: chocolate;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: capitalize;
+            @media all and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
     }
     &-data {
       width: 150px;
