@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FooterComponent from '../FooterComponent';
+import LoaderComponent from '../LoaderComponent';
 import StandingsTableComponent from '../StandingsTableComponent';
 
 import { getStandings } from '../../services/request';
@@ -11,7 +12,7 @@ class StandingsComponent extends React.Component {
     super(props);
     this.state = {
       competition: {},
-      isListable: false,
+      isLoading: true,
       standings: []
     };
   }
@@ -28,6 +29,7 @@ class StandingsComponent extends React.Component {
     getStandings(id).then(data => {
       this.setState({
         competition: data.competition,
+        isLoading: false,
         standings: data.standings
       });
     });
@@ -39,8 +41,12 @@ class StandingsComponent extends React.Component {
   }
 
   render() {
-    const { competition, standings } = this.state;
-    console.log('SATNDINGS', standings);
+    const { competition, isLoading, standings } = this.state;
+    
+    if (isLoading) {
+      return <LoaderComponent />;
+    }
+
     return (
       <div className="app">
         <div className="standings-container">

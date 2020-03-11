@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import FooterComponent from '../FooterComponent';
+import LoaderComponent from '../LoaderComponent';
 import ResultTableComponent from '../ResultTableComponent';
 
 import { getMatches } from '../../services/request';
@@ -12,6 +13,7 @@ class ResultsComponent extends React.Component {
     super(props);
     this.state = {
       competition: {},
+      isLoading: true,
       results: []
     };
   }
@@ -25,6 +27,7 @@ class ResultsComponent extends React.Component {
     getMatches(id).then(data => {
       this.setState({
         competition: data.competition,
+        isLoading: false,
         results: data.matches
       });
     });
@@ -40,7 +43,11 @@ class ResultsComponent extends React.Component {
   }
 
   render() {
-    const { competition, results } = this.state;
+    const { competition, isLoading, results } = this.state;
+
+    if (isLoading) {
+      return <LoaderComponent />;
+    }
 
     const competitionStages = this.setCompetitionStages(results);
     const groupResults = key =>
@@ -52,7 +59,7 @@ class ResultsComponent extends React.Component {
 
     return (
       <div className="app">
-        <div className="results-container">
+       <div className="results-container">
           <h1 className="results-title">{`Results ${competition.name}`}</h1>
           <Link 
             className="results-back-button" 
