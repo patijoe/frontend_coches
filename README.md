@@ -5,9 +5,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
 
-> Frontend-Architecture is a repo that contains all the frontend code with the architecture and folders organization of MMG React and Redux project, 
-witch is explain in detail in the following subsections of this document.
-
 ## Application Structure
 
 All the application is organized with connected README.md files which explains each part 
