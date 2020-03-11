@@ -1,4 +1,4 @@
-# football-competitions# Frontend-Dentalxr
+# football-competitions
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
@@ -8,7 +8,7 @@
 ## Application Structure
 
 All the application is organized with connected README.md files which explains each part 
-separately. Here are the main links of all the application folders:
+separately. Here are the main application folders:
 
 - [node_modules/](./node_modules): Project dependencies and development tools. 
 - [public](./public):
