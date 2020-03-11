@@ -37,8 +37,7 @@ project dependencies for local development you need to:
 
 ### Development Server
 
-When you have all the dependencies install the next step is to launch the developer server 
-(webpack-dev-server), you can do this with the following commands:
+When you have all the dependencies install the next step is to launch the server, you can do this with the following commands:
 
 > npm start
 
