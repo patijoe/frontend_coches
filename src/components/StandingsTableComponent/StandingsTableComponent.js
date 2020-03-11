@@ -17,16 +17,17 @@ class StandingsTableComponent extends React.Component {
             </tr>
           </thead>
           <tbody className="standings-table-body">
-            {team.table.map(item => {
-              return (
-                <tr className="standings-table-body-row" key={team.position}>
-                  <td className="standings-table-body-data-position">{item.position}</td>
-                  <td className="standings-table-body-data-name">{item.team.name}</td>
-                  <td className="standings-table-body-data">{item.won}</td>
-                  <td className="standings-table-body-data">{item.draw}</td>
-                  <td className="standings-table-body-data">{item.lost}</td>
-                </tr>
-              );
+            {team.table
+              .map(item => {
+                return (
+                  <tr className="standings-table-body-row" key={team.position}>
+                    <td className="standings-table-body-data-position">{item.position}</td>
+                    <td className="standings-table-body-data-name">{item.team.name}</td>
+                    <td className="standings-table-body-data">{item.won}</td>
+                    <td className="standings-table-body-data">{item.draw}</td>
+                    <td className="standings-table-body-data">{item.lost}</td>
+                  </tr>
+                );
             })}
           </tbody>
         </table>

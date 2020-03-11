@@ -10,32 +10,37 @@ class StandingsComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      standings: [],
       competition: {},
-      isListable: false
+      isListable: false,
+      standings: []
     };
   }
 
   componentDidMount = async () => {
-    const { match: { params: { id } } } = this.props;
+    const { match: 
+      { params: 
+        { id } } 
+      } = this.props;
     this.getStandingsFetch(id);
   };
 
   getStandingsFetch(id) {
     getStandings(id).then(data => {
       this.setState({
-        standings: data.standings,
-        competition: data.competition
+        competition: data.competition,
+        standings: data.standings
       });
     });
   }
 
   hasTable(standing) {
-    return (standing && standing.stage === 'REGULAR_SEASON') || (standing && standing.stage === 'GROUP_STAGE');
+    return (standing && standing.stage === 'REGULAR_SEASON') || 
+    (standing && standing.stage === 'GROUP_STAGE');
   }
 
   render() {
     const { competition, standings } = this.state;
+    console.log('SATNDINGS', standings);
     return (
       <div className="app">
         <div className="standings-container">
@@ -45,7 +50,19 @@ class StandingsComponent extends React.Component {
           <div className="standing-container-header">
             <h1 className="standings-title">{`Standings ${competition.name}`}</h1>
           </div>
-          <div className="standings-tables">{standings && this.hasTable(standings[0]) ? standings.filter(item => item.type === 'TOTAL').map(team => <StandingsTableComponent team={team} />) : ''}</div>
+          <div className="standings-tables">
+            {standings && this.hasTable(standings[0]) ? 
+              standings
+                .filter(item => item.type === 'TOTAL')
+                .map(team => <StandingsTableComponent team={team} />) : 
+              (
+                <h2 className="standings-unavailable">
+                  Sorry, we don't have the standings   
+                    <span role="img" aria-label="mono tapandose los ojos">   &#128584;</span>
+                </h2>
+              )   
+             }
+          </div>
         </div>
         <FooterComponent />
       </div>

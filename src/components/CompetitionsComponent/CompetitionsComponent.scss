@@ -41,6 +41,9 @@ body {
     border-radius: 3px;
     margin: 8px 10px;
     width: 300px;
+    @media all and(min-width: 768px) {
+      width: 350px;
+    }
 
     &:hover {
       box-shadow: (-2px 3px 10px 0 rgba(0, 0, 0, 0.1));
@@ -56,8 +59,9 @@ body {
     &-info {
       align-items: center;
       display: flex;
-      width: 100%;
       justify-content: space-between;
+      margin-bottom: 8px;
+      width: 100%;
     }
   }
   &-link {
@@ -73,6 +77,11 @@ body {
     padding: 5px;
     text-decoration: none;
     width: 50px;
+    @media all and(min-width: 768px) {
+      font-size: 12px;
+      height: 20px;
+      width: 80px;
+    }
     &-container {
       display: flex;
       justify-content: space-around;
@@ -100,6 +109,9 @@ body {
         font-size: 16px;
         font-weight: bold;
         margin: 0 0 4px 0;
+        @media all and(min-width: 768px) {
+          font-size: 14px;
+        }
       }
       &-title {
         color: #7d7f7d;
@@ -107,6 +119,9 @@ body {
         font-size: 12px;
         font-weight: bold;
         margin: 0;
+        @media all and(min-width: 768px) {
+          font-size: 14px;
+        }
       }
     }
   }

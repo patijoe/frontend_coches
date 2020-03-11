@@ -24,8 +24,8 @@ class ResultsComponent extends React.Component {
   getMatchesFetch(id) {
     getMatches(id).then(data => {
       this.setState({
-        results: data.matches,
-        competition: data.competition
+        competition: data.competition,
+        results: data.matches
       });
     });
   }
@@ -41,7 +41,6 @@ class ResultsComponent extends React.Component {
 
   render() {
     const { competition, results } = this.state;
-    console.log('RESULTS', results);
 
     const competitionStages = this.setCompetitionStages(results);
     const groupResults = key =>
@@ -55,21 +54,27 @@ class ResultsComponent extends React.Component {
       <div className="app">
         <div className="results-container">
           <h1 className="results-title">{`Results ${competition.name}`}</h1>
-          <Link className="results-back-button" to={ROUTER_PATH}>
+          <Link 
+            className="results-back-button" 
+            to={ROUTER_PATH}>
             VOLVER
           </Link>
           <div className="results-match">
             <table className="results-table">
-              {Object.keys(competitionStages).map(key => {
+              {Object.keys(competitionStages)
+                .map((key, index) => {
                 return (
-                  <div className="results-stage" key={key}>
-                    <h2 className="results-stage-name">{key === 'GROUP_STAGE' ? 'GROUP STAGE' : ''}</h2>
-                    {Object.keys(groupResults(key)).map(item => {
+                  <div className="results-stage" key={index}>
+                    <h2 className="results-stage-name">
+                      {key === 'GROUP_STAGE' ? 'GROUP STAGE' : ''}
+                     </h2>
+                    {Object.keys(groupResults(key))
+                      .map((item, index) => {
                       return (
-                        <div className="results-group" key={item}>
+                        <div className="results-group" key={index+1000}>
                           <h2 className="results-group-name">{item}</h2>
                           {groupResults(key)[item].map(item => {
-                            return <ResultTableComponent item={item} key={key.id} />;
+                            return <ResultTableComponent item={item} key={item.id} />;
                           })}
                         </div>
                       );
