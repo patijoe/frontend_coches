@@ -11,7 +11,6 @@ body {
   &-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
   &-title {
     color: #7d7f7d;
@@ -63,8 +62,7 @@ body {
   }
   &-link {
     align-items: center;
-    color: #ccd0d3;
-
+    color: white;
     border-radius: 3px;
     display: flex;
     font-family: 'Roboto', sans-serif;

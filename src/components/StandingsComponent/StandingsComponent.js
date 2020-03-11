@@ -39,7 +39,7 @@ class StandingsComponent extends React.Component {
     return (
       <div className="app">
         <div className="standings-container">
-          <Link className="back-button" to={ROUTER_PATH}>
+          <Link className="standings-back-button" to={ROUTER_PATH}>
             VOLVER
           </Link>
           <div className="standing-container-header">

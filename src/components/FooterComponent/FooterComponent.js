@@ -4,7 +4,7 @@ class FooterComponent extends React.Component {
   render() {
     return (
       <div className="footer">
-        <h1 className="footer-title">hecho con love &#10084;</h1>
+        <h1 className="footer-title">made with love &#10084;</h1>
       </div>
     );
   }

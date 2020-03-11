@@ -64,7 +64,7 @@ class ResultsComponent extends React.Component {
       <div className="app">
         <div className="results-container">
           <h1 className="results-title">{`Results ${competition.name}`}</h1>
-          <Link className="back-button" to={ROUTER_PATH}>
+          <Link className="results-back-button" to={ROUTER_PATH}>
             VOLVER
           </Link>
           <div className="results-match">
