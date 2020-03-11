@@ -5,7 +5,7 @@
     font-weight: bold;
   }
   &-title {
-    color: #7d7f7d;
+    color: rgb(230, 115, 0);
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: bold;
@@ -19,9 +19,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  &-container {
-    height: 100vh;
-    margin-bottom: 30px;
   }
 }
