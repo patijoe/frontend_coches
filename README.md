@@ -12,8 +12,8 @@ separately. Here are the main application folders:
 
 - [node_modules/](./node_modules): Project dependencies and development tools. 
 - [public](./public):
-    - [favicon.ico]
-    - [index.html]: This is the HTML file
+    - [favicon.ico](./public/favicon.ico)
+    - [index.html](./public/index.html): This is the HTML file
 - [src](./src): The main `frontend-hub` application code.
   - [components](./src/components)
   - [constants](./src/constants): Constants use thought the application.
