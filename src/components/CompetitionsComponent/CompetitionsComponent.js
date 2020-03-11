@@ -47,10 +47,10 @@ class CompetitionsComponent extends React.Component {
                           </div>
                         </div>
                         <div className="competitions-link-container">
-                          <Link className="competitions-link" to={ROUTER_STANDINGS_LINK(`${competition.id}`)}>
+                          <Link className="competitions-link competitions-link-standings" to={ROUTER_STANDINGS_LINK(`${competition.id}`)}>
                             Standings
                           </Link>
-                          <Link className="competitions-link" to={ROUTER_RESULTS_LINK(`${competition.id}`)}>
+                          <Link className="competitions-link competitions-link-results" to={ROUTER_RESULTS_LINK(`${competition.id}`)}>
                             Results
                           </Link>
                         </div>

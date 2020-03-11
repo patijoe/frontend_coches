@@ -6,7 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 50px 50px 0 50px;
-  position: relative;
 }
 .competitions {
   &-container {
@@ -38,7 +37,7 @@ body {
     }
   }
   &-item {
-    background-color: lightgrey;
+    background-color: white;
     border: solid #7d7f7d 1px;
     border-radius: 3px;
     margin: 8px 10px;
@@ -65,7 +64,7 @@ body {
   &-link {
     align-items: center;
     color: #ccd0d3;
-    background-color: #7d7f7d;
+
     border-radius: 3px;
     display: flex;
     font-family: 'Roboto', sans-serif;
@@ -80,6 +79,12 @@ body {
       display: flex;
       justify-content: space-around;
       width: 100%;
+    }
+    &-standings {
+      background-color: rgb(230, 115, 0);
+    }
+    &-results {
+      background-color: rgb(26, 83, 255);
     }
     &-block {
       display: flex;

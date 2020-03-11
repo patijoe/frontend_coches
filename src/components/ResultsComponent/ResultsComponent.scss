@@ -1,30 +1,38 @@
 .results {
   &-container {
-    align-items: center;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    // width: 100%;
   }
-  &-title,
+  &-title {
+    color: rgb(26, 83, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: start;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    width: 100%;
+  }
   &-competition-name {
-    color: #7d7f7d;
+    color: rgb(26, 83, 255);
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: bold;
     text-align: start;
     text-transform: uppercase;
     margin-bottom: 20px;
-    padding: 0 0 0 250px;
     width: 100%;
   }
   &-match {
     display: flex;
     justify-content: center;
     position: relative;
-    @media all and (min-width: 768px) {
-      width: 450px;
-    }
+    width: 100%;
+    // @media all and (min-width: 768px) {
+    //   width: 450px;
+    // }
   }
   &-team {
     display: flex;
