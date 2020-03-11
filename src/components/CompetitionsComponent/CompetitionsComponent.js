@@ -7,21 +7,6 @@ import { ROUTER_RESULTS_LINK, ROUTER_STANDINGS_LINK } from '../../constants/rout
 
 const availableCompetitions = [ 2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021 ];
 class CompetitionsComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      competitionSelected: 0
-    };
-  }
-
-  selectCompetition = id => {
-    this.setState({
-      competitionSelected: id
-    });
-  };
-
-  handleClick = id => () => this.selectCompetition(id);
-
   render() {
     const { competitions } = this.props;
 
@@ -32,14 +17,9 @@ class CompetitionsComponent extends React.Component {
             <h1 className="competitions-title">Competitions</h1>
             <ul className="competitions-list">
               {competitions &&
-                competitions
-                .filter(item => availableCompetitions.indexOf(item.id) !== -1)
-                .map(competition => {
+                competitions.filter(item => availableCompetitions.indexOf(item.id) !== -1).map(competition => {
                   return (
-                    <li 
-                      className="competitions-item" 
-                      key={competition.id} 
-                      onClick={this.handleClick(competition.id)}>
+                    <li className="competitions-item" key={competition.id}>
                       <div className="competitions-item-container">
                         <div className="competitions-item-info">
                           <div className="competitions-link-block competitions-link-block-name">
@@ -52,14 +32,10 @@ class CompetitionsComponent extends React.Component {
                           </div>
                         </div>
                         <div className="competitions-link-container">
-                          <Link 
-                            className="competitions-link competitions-link-standings" 
-                            to={ROUTER_STANDINGS_LINK(`${competition.id}`)}>
+                          <Link className="competitions-link competitions-link-standings" to={ROUTER_STANDINGS_LINK(`${competition.id}`)}>
                             Standings
                           </Link>
-                          <Link 
-                            className="competitions-link competitions-link-results" 
-                            to={ROUTER_RESULTS_LINK(`${competition.id}`)}>
+                          <Link className="competitions-link competitions-link-results" to={ROUTER_RESULTS_LINK(`${competition.id}`)}>
                             Results
                           </Link>
                         </div>
