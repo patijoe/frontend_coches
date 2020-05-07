@@ -18,83 +18,8 @@ button {
   padding-right: 10px;
 }
 
-.cc_background_home_km0 {
-  background: url('./images/hero.jpg') repeat-x scroll center top transparent;
-}
-
 .row {
   margin-top: 20px;
-}
-
-#hero {
-  width: 100%;
-  padding: 60px 0;
-}
-
-#hero .buscador {
-  margin: 60px auto 0px auto;
-}
-
-.titleWeb {
-  font-family: Arial;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0px 2px 3px #333;
-}
-
-.titleWeb h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 60px;
-  font-weight: bold;
-}
-
-.titleWeb p {
-  margin-top: 10px;
-  padding: 0;
-  font-size: 16px;
-}
-
-.buscador {
-  width: 100%;
-  max-width: 840px;
-}
-
-.buscador form { 
-  display: flex;
-  justify-content: center;
-}
-
-.buscador form input[type="text"] {
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  margin-right: 5px;
-  background-color: #fff;
-  border: none;
-  color: #333333;
-  font-size: 16px;
-  width: 60%;
-  height: 40px;
-  outline: none;
-  padding: 0 10px;
-}
-
-.buscador form .buscadorBoton {
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border: 1px solid #d96621;
-  background-color: #d96621;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  display: block;
-  width: 100%;
-  max-width: 220px;
-  height: 40px;
-  color: #fff;
-  text-shadow: 0px 1px 3px #333333;
 }
 
 .cc_section_title {
