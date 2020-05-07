@@ -1,12 +1,12 @@
 import React from 'react';
 
-import FirstComponent from './components/FirstComponent/index.js';
+import MainComponent from './components/MainComponent/index.js';
 
 class App extends React.Component {
 
   render() {
     return (
-      <FirstComponent />
+      <MainComponent />
     );
   }
 }
