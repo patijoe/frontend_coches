@@ -1,4 +1,5 @@
 import React from 'react';
+import FormComponent from "../FormComponent/index";
 
 class HeroComponent extends React.Component {
   render() {
@@ -7,16 +8,9 @@ class HeroComponent extends React.Component {
     return (
         <div id="hero" className="hero-container">
           <div className="hero-title">
-              <h1>Coches seminuevos y km 0</h1>
-              <p>Las mejores ofertas en coches seminuevos y km 0 de concesionarios oficiales.</p>
+              <h1>La mayor oferta de coches Seminuevos y km 0 </h1>
           </div>
-          <div class="hero-search">
-              <form id="search" action="#" method="post">
-                  <input type="text" name="search4" id="search4" spellcheck="false" autocomplete="off"
-                      placeholder="Ej: Seat Ibiza" />
-                  <button type="submit" className="hero-button">Buscar</button>
-              </form>
-          </div>
+          <FormComponent />
         </div>
     );
   }
