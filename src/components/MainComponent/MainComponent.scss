@@ -1,10 +1,10 @@
 body {
-  margin: 0;
   background-color: #fff;
+  color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  color: #333;
+  margin: 0;
 }
 
 button {
@@ -42,7 +42,7 @@ button {
     }
     &_button {
       align-items: center;
-      background-color: #FDB813;
+      background-color: #fdb813;
       border-radius: 3px;
       color: white;
       display: flex;
