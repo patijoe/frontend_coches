@@ -1,0 +1,54 @@
+.card {
+  &-container {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 0 20px 10px 10px;
+    position: relative;
+    width: 300px;
+  }
+  &-image_responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  &-price {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    &_icon {
+      width: 35px;
+    }
+    &_euros {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+  }
+  &-model {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 15px;
+  }
+  &-tech {
+    padding: 0 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    &_date {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: auto;
+    }
+    &_icon {
+      width: 15px;
+      margin: 0 6px 0;
+    }
+    &_year {
+      font-size: 16px;
+      color: #333333;
+    }
+  }
+}
