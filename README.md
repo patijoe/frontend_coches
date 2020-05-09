@@ -17,7 +17,6 @@ separately. Here are the main application folders:
 - [src](./src): The main `frontend-hub` application code.
   - [components](./src/components)
   - [constants](./src/constants): Constants use thought the application.
-  - [service](./src/service): Utilities to call REST API's and manage the results. 
   - [styles](./src/styles): Assets of the application (fonts, images, CSS styles).
   - [serviceWorker.js](./serviceWorker.js): background worker that acts as a programmable proxy, allowing us to control what happens on a request-by-request basis.
 - [.gitignore](./.gitignore): List of files and directories which should not be part of the

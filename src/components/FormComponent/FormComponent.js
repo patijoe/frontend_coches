@@ -7,12 +7,13 @@ class FormComponent extends React.Component {
       <div class="form-search">
         <form id="search" action="#" method="post">
           <input
-            type="text"
-            name="search4"
-            id="search4"
-            spellcheck="false"
             autocomplete="off"
+            className="form-input"
+            id="search4"
+            name="search4"
             placeholder="Ej: Seat Ibiza"
+            spellcheck="false"
+            type="text"
           />
           <button type="submit" className="form-button">
             <img

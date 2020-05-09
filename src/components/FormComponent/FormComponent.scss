@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
   }
-  &-search form input[type="text"] {
+  &-input {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     background-color: #fff;
@@ -23,15 +23,15 @@
     width: 260px;
   }
   &-icon {
-    width: 20px;
     height: 20px;
+    width: 20px;
   }
-  &-search form &-button {
+  &-button {
     align-items: center;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border: 1px solid #d96621;
-    background-color: #d96621;
+    border: 1px solid #FDB813;
+    background-color: #FDB813;
     color: #fff;
     display: flex;
     font-size: 20px;

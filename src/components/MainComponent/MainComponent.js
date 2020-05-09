@@ -23,6 +23,15 @@ class MainComponent extends React.Component {
             })}
           </ul>
         </div>
+        <div className="main-button_container">
+          <div
+            className="main-button_button"
+            role="presentation"
+            onClick={this.seeSales}
+          >
+            Ver ofertas
+          </div>
+        </div>
       </div>
     );
   }
